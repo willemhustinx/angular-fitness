@@ -5,14 +5,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedApparaat">
-
-<h2>{{ selectedApparaat.name | uppercase }} Details</h2>
-<div><span>id: </span>{{selectedApparaat.id}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="selectedApparaat.name" placeholder="name">
-  </label>
-</div>
-
-</div>
+<app-apparaat-detail [apparaat]="selectedApparaat"></app-apparaat-detail>

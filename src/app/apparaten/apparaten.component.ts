@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Apparaat} from '../apparaat'
-import {APPARATEN} from '../mock-apparaten'
+import {Apparaat} from '../apparaat';
+import { ApparaatService } from '../apparaat.service';
 
 @Component({
   selector: 'app-apparaten',
@@ -9,17 +9,23 @@ import {APPARATEN} from '../mock-apparaten'
 })
 export class ApparatenComponent implements OnInit {
 
-  apparaten = APPARATEN;
-
   selectedApparaat: Apparaat;
 
-  constructor() { }
+  apparaten: Apparaat[];
+
+  constructor(private apparaatService: ApparaatService) { }
 
   ngOnInit() {
+    this.getApparaten();
   }
 
   onSelect(apparaat: Apparaat): void {
     this.selectedApparaat = apparaat;
+  }
+
+  getApparaten(): void {
+    this.apparaatService.getApparaten()
+    .subscribe(apparaten => this.apparaten = apparaten);
   }
 
 }

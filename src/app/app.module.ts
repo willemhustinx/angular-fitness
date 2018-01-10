@@ -4,18 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ApparatenComponent } from './apparaten/apparaten.component';
-
+import { ApparaatDetailComponent } from './apparaat-detail/apparaat-detail.component';
+import { ApparaatService } from './apparaat.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ApparatenComponent
+    ApparatenComponent,
+    ApparaatDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ApparaatService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
