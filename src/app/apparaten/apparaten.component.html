@@ -1,8 +1,8 @@
 <h2>My Apparaten</h2>
 <ul class="apparaten">
-  <li *ngFor="let apparaat of apparaten" [class.selected]="apparaat === selectedApparaat" (click)="onSelect(apparaat)">
-    <span class="badge">{{apparaat.id}}</span> {{apparaat.name}}
+  <li *ngFor="let apparaat of apparaten">
+    <a routerLink="/detail/{{apparaat.id}}">
+      <span class="badge">{{apparaat.id}}</span> {{apparaat.name}}
+    </a>
   </li>
 </ul>
-
-<app-apparaat-detail [apparaat]="selectedApparaat"></app-apparaat-detail>

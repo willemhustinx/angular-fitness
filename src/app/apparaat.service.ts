@@ -16,6 +16,12 @@ export class ApparaatService {
     return of(APPARATEN);
   }
 
+  getApparaat(id: number): Observable<Apparaat> {
+    // Todo: send the message _after_ fetching the hero
+    this.messageService.add(`ApparaatService: fetched hero id=${id}`);
+    return of(APPARATEN.find(apparaat => apparaat.id === id));
+  }
+
   constructor(private messageService: MessageService) { }
 
 }

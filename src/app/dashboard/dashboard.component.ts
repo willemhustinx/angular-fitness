@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import {Apparaat} from '../apparaat';
+import { Apparaat } from '../apparaat';
 import { ApparaatService } from '../apparaat.service';
-
+ 
 @Component({
-  selector: 'app-apparaten',
-  templateUrl: './apparaten.component.html',
-  styleUrls: ['./apparaten.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
-export class ApparatenComponent implements OnInit {
-
-  apparaten: Apparaat[];
-
+export class DashboardComponent implements OnInit {
+  apparaten: Apparaat[] = [];
+ 
   constructor(private apparaatService: ApparaatService) { }
-
+ 
   ngOnInit() {
     this.getApparaten();
   }
-
+ 
   getApparaten(): void {
     this.apparaatService.getApparaten()
     .subscribe(apparaten => this.apparaten = apparaten);
   }
-
 }

@@ -8,17 +8,21 @@ import { ApparaatDetailComponent } from './apparaat-detail/apparaat-detail.compo
 import { ApparaatService } from './apparaat.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApparatenComponent,
     ApparaatDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ApparaatService, MessageService],
   bootstrap: [AppComponent]
